@@ -25,6 +25,8 @@
 
     <link rel="stylesheet" href="css/style.css">
     
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
   
@@ -62,6 +64,7 @@
                 <li><a href="#process-section" class="nav-link">Process</a></li>
                 <li><a href="#testimonials-section" class="nav-link">Testimonials</a></li>
                 <li><a href="#services-section" class="nav-link">Services</a></li>
+                <li><a href="#analytics-section" class="nav-link">Analytics</a></li>
                 
               </ul>
             </nav>
@@ -575,6 +578,28 @@
         </div>
       </div>
     </div>
+    
+    <div class="site-section bg-light" id="analytics-section" data-aos="fade">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mb-5">
+            <h2 class="section-title">Analytics</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem possimus distinctio ex. Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+            <h2 class="section-title">Hermoso Gráfico de Barras</h2>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <br>
+            <br>
+            <h2 class="section-title">Hermoso Gráfico de Área</h2>
+            <canvas id="myChart2" width="400" height="200"></canvas>
+            <br>
+            <br>
+            <h2 class="section-title" >Embedded DiBo de SAP Analytics Cloud</h2>
+            <iframe id= "analytics" src="https://demo-presalesmx.us10.sapanalytics.cloud/sap/fpa/ui/app.html#;mode=embed;view_id=story;storyId=166F4AE9C1CD1A4BA4D0EC26D9AEE05C" > </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   
      
@@ -594,6 +619,7 @@
               <li><a href="#process-section" class="smoothscroll">Process</a></li>
               <li><a href="#testimonials-section" class="smoothscroll">Testimonials</a></li>
               <li><a href="#services-section" class="smoothscroll">Services</a></li>
+              <li><a href="#analytics-section" class="nav-link">Analytics</a></li>
             </ul>
           </div>
 
@@ -609,16 +635,11 @@
           </div>
 
         </div>
-
+    
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <div class="border-top pt-5">
-              <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            
+             
             </div>
           </div>
           
@@ -642,6 +663,79 @@
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
   <script src="js/main.js"></script>
+  
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+<script>
+var ctx = document.getElementById('myChart2').getContext('2d');
+var myChart2 = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+});
+</script>
     
   
   </body>
